@@ -1,33 +1,34 @@
-const enterBtn = document.getElementById("enter-btn");
-const welcome = document.getElementById("welcome-screen");
-const main = document.getElementById("main-content");
-const music = document.getElementById("music");
+document.addEventListener('DOMContentLoaded', () => {
+  const music = document.getElementById('bg-music');
+  const musicToggle = document.getElementById('music-toggle');
+  const openCardBtn = document.getElementById('open-card-btn');
+  const closeCardBtn = document.getElementById('close-card-btn');
+  const noteMessage = document.getElementById('note-message');
 
-enterBtn.addEventListener("click", () => {
-  music.play();
-  welcome.style.display = "none";
-  main.classList.remove("hidden");
+  // Music handling logic
+  musicToggle.addEventListener('click', () => {
+    if (music.paused) {
+      music.play()
+        .then(() => {
+          musicToggle.textContent = '🎵 Playing';
+          musicToggle.classList.add('active');
+        })
+        .catch(err => console.log("Audio playback waiting for user action.", err));
+    } else {
+      music.pause();
+      musicToggle.textContent = '▶ Play Music';
+      musicToggle.classList.remove('active');
+    }
+  });
 
-  createHearts();
+  // Note display visibility controls
+  openCardBtn.addEventListener('click', () => {
+    openCardBtn.classList.add('hidden');
+    noteMessage.classList.remove('hidden');
+  });
+
+  closeCardBtn.addEventListener('click', () => {
+    noteMessage.classList.add('hidden');
+    openCardBtn.classList.remove('hidden');
+  });
 });
-
-function createHearts() {
-  setInterval(() => {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-
-    const emojis = ["❤️","🌹","✨","💕"];
-    heart.innerHTML =
-      emojis[Math.floor(Math.random() * emojis.length)];
-
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize =
-      Math.random() * 20 + 20 + "px";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-      heart.remove();
-    }, 8000);
-  }, 400);
-}
