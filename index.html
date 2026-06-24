@@ -3,35 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Milan 🎂</title>
+  <title>Happy Birthday Milan</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div id="welcome-screen">
-    <button id="enter-btn">🌹 Tap to Enter 🌹</button>
+  <audio id="bg-music" src="Kali Uchis - I Wish you Roses (Official Music Video).mp3" loop></audio>
+
+  <div class="bg-glows">
+    <div class="glow pink"></div>
+    <div class="glow purple"></div>
   </div>
-  <div id="main-content" class="hidden">
-  <h1>🎂 Happy Birthday, Milan ❤️</h1>
 
-  <p class="message">
-    Today is all about you, and I hope this day brings you as much happiness
-    as you bring to the people around you. 🌹✨<br><br>
+  <div class="container">
+    <button id="music-toggle" class="music-btn">▶ Play Music</button>
 
-    On your special day, I want to wish you endless smiles, beautiful memories,
-    and all the love your heart can hold. May this new year of your life be
-    filled with success, peace, laughter, and dreams coming true. 💕<br><br>
+    <main class="card">
+      <header class="card-header">
+        <h1>Happy Birthday, <span class="gradient-text">Milan!</span></h1>
+        <p class="subtitle">wish u roses 🌹</p>
+      </header>
 
-    You deserve every good thing this world has to offer. May your days be
-    bright, your heart be light, and your path be filled with wonderful
-    opportunities and unforgettable moments. 🌸<br><br>
-
-    Thank you for being such an amazing person. Never stop being the beautiful,
-    kind, and wonderful soul that you are. Keep shining, keep smiling, and
-    keep chasing your dreams because the world is a better place with you in it.
-    💖✨<br><br>
-
-    Happy Birthday once again, Milan. I wish you love, happiness, success,
-    and a lifetime of roses. 🌹❤️🎉
-  </p>
+      <div class="card-body">
+        <button id="open-card-btn" class="action-btn">Open Note ✉️</button>
+        
+        <div id="note-message" class="note hidden">
+          <p>Hey Milan!</p>
+          <p>Even though we don't know each other that well, I wanted to put this together to celebrate your day.</p>
+          <p>Hope your year is full of amazing energy and great music. Enjoy it to the absolute fullest! 🥂</p>
+          <button id="close-card-btn" class="close-btn">Close Note</button>
+        </div>
+      </div>
+    </main>
   </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
