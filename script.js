@@ -5,31 +5,29 @@ const music = document.getElementById("music");
 
 enterBtn.addEventListener("click", () => {
   music.play();
-
   welcome.style.display = "none";
   main.classList.remove("hidden");
 
-  createEffects();
+  createHearts();
 });
 
-function createEffects() {
-  const emojis = ["❤️","🌹","✨","🎈","💕"];
-
+function createHearts() {
   setInterval(() => {
-    const item = document.createElement("div");
-    item.classList.add("heart");
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
 
-    item.innerHTML =
+    const emojis = ["❤️","🌹","✨","💕"];
+    heart.innerHTML =
       emojis[Math.floor(Math.random() * emojis.length)];
 
-    item.style.left = Math.random() * 100 + "vw";
-    item.style.fontSize =
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize =
       Math.random() * 20 + 20 + "px";
 
-    document.body.appendChild(item);
+    document.body.appendChild(heart);
 
     setTimeout(() => {
-      item.remove();
+      heart.remove();
     }, 8000);
-  }, 350);
+  }, 400);
 }
