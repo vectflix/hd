@@ -13,7 +13,7 @@ body{
   font-family:Arial, sans-serif;
   background:linear-gradient(-45deg,
   #ff9a9e,
-  #fad0c4,
+  #fecfef,
   #ffd1dc,
   #ffc3a0);
   background-size:400% 400%;
@@ -29,9 +29,9 @@ body{
   font-size:1.3rem;
   border:none;
   border-radius:50px;
+  cursor:pointer;
   background:white;
   color:#ff4d88;
-  cursor:pointer;
   box-shadow:0 10px 30px rgba(0,0,0,.2);
   animation:pulse 2s infinite;
 }
@@ -54,21 +54,24 @@ body{
 
 h1{
   font-size:3rem;
-  margin-bottom:20px;
+  margin-bottom:25px;
   animation:float 3s ease-in-out infinite;
 }
 
 .message{
-  background:rgba(255,255,255,0.18);
+  font-size:1.15rem;
+  line-height:1.8;
+  background:rgba(255,255,255,0.15);
   padding:25px;
   border-radius:25px;
-  line-height:1.8;
-  font-size:1.1rem;
   backdrop-filter:blur(10px);
+  animation:fadeIn 3s;
 }
 
+/* Floating hearts */
 .heart{
   position:absolute;
+  font-size:25px;
   animation:rise 8s linear infinite;
 }
 
